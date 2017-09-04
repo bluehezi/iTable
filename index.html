@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TableJs</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .table {
+            width: 600px;
+            height: 600px;
+            background-color: gray;
+        }
+        .table > .table-row {
+            background: red;
+            border: 1px solid transparent;
+            border-bottom:  none;
+        }
+        .table > .table-row:last-child {
+            border-bottom: 1px solid transparent;
+        }
+        .table > .table-row > .table-row-cell {
+            background: skyblue;
+            padding: 10px;
+            border: 1px solid #000;
+            border-right: none;
+        }
+        .table > .table-row > .table-row-cell:last-child {
+            border-right: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <script src="./table.js"></script>
+    <script>
+        ~function(){
+            let _ = new Itable({
+                ele: document.body,
+                rows: 10,
+                columns: 10,
+                wrapperClassName: 'table',
+                rowClassName: 'table-row',
+                cellClassName: 'table-row-cell'
+            })
+            _.init()
+            _.done()
+
+        }()
+    </script>
+</body>
+</html>
